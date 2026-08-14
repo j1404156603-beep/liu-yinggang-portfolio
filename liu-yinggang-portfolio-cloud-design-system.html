@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘迎港作品集：酷黑车辆与路侧设备协同云控平台设计规范，涵盖色彩、字体、画布、组件、视频弹窗与切图交付。">
+  <title>酷黑云控大屏设计规范｜刘迎港作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@500;600&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/cloud-spec.css?v=portfolio-2026-08-14-1254">
+  <link rel="stylesheet" href="assets/portfolio-unified.css?v=portfolio-2026-08-14-1254">
+  <link rel="stylesheet" href="assets/contact-module.css?v=portfolio-2026-08-14-1254">
+  <script defer src="assets/contact-module.js?v=portfolio-2026-08-14-1254"></script>
+  <script defer src="assets/language-switcher.js?v=portfolio-2026-08-14-1254"></script>
+</head>
+<body class="portfolio-unified portfolio-spec-page">
+  <header class="portfolio-global-header">
+    <nav class="portfolio-global-nav" aria-label="作品集主导航">
+      <a class="portfolio-global-brand" href="liu-yinggang-portfolio-home-warm-paper.html#hero" aria-label="返回刘迎港作品集首页">
+        <span></span><span></span><span></span><span></span>
+      </a>
+      <div class="portfolio-global-links" data-portfolio-nav-links>
+        <a href="liu-yinggang-portfolio-home-warm-paper.html#hero">主页</a>
+        <a href="liu-yinggang-portfolio-about.html">关于我</a>
+        <a class="is-active" href="liu-yinggang-portfolio-case-studies.html" aria-current="page">精选案例</a>
+        <span class="is-disabled" aria-disabled="true">实验</span>
+      </div>
+      <button class="portfolio-global-toggle" type="button" data-portfolio-nav-toggle aria-expanded="false" aria-label="打开主导航">☰</button>
+    </nav>
+  </header>
+  <header class="spec-header">
+    <nav class="spec-nav" aria-label="设计规范导航">
+      <a class="spec-brand" href="liu-yinggang-portfolio-home-warm-paper.html">
+        <b>LYG</b>
+        <span>刘迎港</span>
+      </a>
+      <div class="spec-links">
+        <a href="#color">色彩</a>
+        <a href="#type">字体</a>
+        <a href="#layout">布局</a>
+        <a href="#components">组件</a>
+        <a href="#modal">弹窗</a>
+        <a href="#delivery">交付</a>
+      </div>
+      <a class="spec-back" href="liu-yinggang-portfolio-case-cloud.html">← 返回案例</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="spec-section spec-hero" id="overview">
+      <div class="spec-container">
+        <div class="spec-topline">
+          <span>CASE STUDY 03 / DESIGN SYSTEM</span>
+          <span>LANHU ANNOTATION + 132 EXPORTED ASSETS</span>
+        </div>
+
+        <div class="spec-hero-grid">
+          <div>
+            <span class="spec-kicker">CLOUD CONTROL · 1920 × 1080</span>
+            <h1>酷黑云控<br>大屏设计规范</h1>
+            <p class="spec-lead">把车辆调度、路侧设备、地图、视频、状态与控制动作整理为同一套可交付的视觉语言。规范来自真实蓝湖标注与 1×/2× 切图，不把复盘建议冒充原始设计事实。</p>
+          </div>
+          <aside class="spec-proof">
+            <span>规范重点</span>
+            <strong>结构统一、状态可辨、<br>资产可替换、研发可验收。</strong>
+          </aside>
+        </div>
+
+        <div class="spec-facts">
+          <article class="spec-fact"><strong>1920 × 1080</strong><span>Web 基准画布</span></article>
+          <article class="spec-fact"><strong>132</strong><span>1× / 2× 导出文件</span></article>
+          <article class="spec-fact"><strong>3 套</strong><span>车辆 · 路测 · 视频弹窗</span></article>
+          <article class="spec-fact"><strong>3 种字体</strong><span>信息正文 · 操作 · 主标题</span></article>
+        </div>
+
+        <figure class="dashboard-proof">
+          <img src="assets/cloud-spec/vehicle-dashboard.jpg" alt="酷黑车辆调度大屏最终界面">
+        </figure>
+        <p class="spec-caption">真实交付稿：车辆调度大屏。规范将复杂装饰资产与可编辑信息层分开记录。</p>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--night" id="color">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">01 / COLOR TOKENS</span>
+          <h2>深色不是目的，<br>状态辨识才是</h2>
+          <p>蓝黑色用于降低环境干扰，亮蓝建立交互边界，绿、黄、红只负责表达状态。以下关键值来自蓝湖精确标注与切图像素。</p>
+        </header>
+
+        <div class="token-grid">
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#081020"></div>
+            <div class="token-info"><strong>Canvas</strong><code>#081020</code><span>大屏深色基底</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#00093A"></div>
+            <div class="token-info"><strong>Modal Surface</strong><code>#00093A</code><span>五路视频弹窗</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#4794FF"></div>
+            <div class="token-info"><strong>Primary Line</strong><code>#4794FF</code><span>选中、边框、标题条</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#7EB0FF"></div>
+            <div class="token-info"><strong>Modal Line</strong><code>#7EB0FF</code><span>弹窗 2 px 内边框</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#A8CBFF"></div>
+            <div class="token-info"><strong>Label</strong><code>#A8CBFF</code><span>字段标签 14 px</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#04A3FF"></div>
+            <div class="token-info"><strong>Info</strong><code>#04A3FF</code><span>关键实时数值</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#36FF7D"></div>
+            <div class="token-info"><strong>Success</strong><code>#36FF7D</code><span>已连接、正常运行</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#FF5656"></div>
+            <div class="token-info"><strong>Danger</strong><code>#FF5656</code><span>停止、异常、危险</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--soft" id="type">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">02 / TYPOGRAPHY</span>
+          <h2>信息层与动作层，<br>使用不同的声音</h2>
+          <p>信息文字保持稳定、清楚；关键动作与大屏标题使用更强的展示字体。模块装饰条可以保留切图，但内容文字应逐步改成可编辑文本。</p>
+        </header>
+
+        <div class="type-table">
+          <div class="type-row type-row--head"><span>样例</span><span>字体</span><span>字号</span><span>用途</span></div>
+          <div class="type-row">
+            <span class="type-sample--title">酷黑车辆调度大屏</span>
+            <span>HYk2gj</span><span>38 px</span><span>大屏主标题，白到蓝高光</span>
+          </div>
+          <div class="type-row">
+            <span class="type-sample--action">远程启动</span>
+            <span>YouSheBiaoTiHei</span><span>20 / 32 px</span><span>操作按钮与短动作</span>
+          </div>
+          <div class="type-row">
+            <span class="type-sample--value">125.56 km</span>
+            <span>SourceHanSansCN-Regular</span><span>16 px</span><span>关键数值、状态、对象值</span>
+          </div>
+          <div class="type-row">
+            <span class="type-sample--label">车辆名称：</span>
+            <span>SourceHanSansCN-Regular</span><span>14 px</span><span>字段标签与表格表头</span>
+          </div>
+        </div>
+        <p class="evidence-note">蓝湖原始标注：字段标签“车辆名称”使用 SourceHanSansCN-Regular 14 px / #A8CBFF；对象值“KH”使用 16 px / #FFFFFF；表头“事件码”使用 14 px / #CDDFFF。</p>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--night" id="layout">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">03 / CANVAS &amp; LAYOUT</span>
+          <h2>左右稳定分工，<br>中央保留空间上下文</h2>
+          <p>车辆调度与路侧设备页面保持同一结构：左侧对象与控制，中央地图与对象定位，右侧状态、视频与事件反馈。</p>
+        </header>
+
+        <div class="layout-stage">
+          <img src="assets/cloud-spec/roadside-dashboard.jpg" alt="路侧设备控制大屏布局示例">
+          <div class="layout-zone layout-zone--left">OBJECT + CONTROL</div>
+          <div class="layout-zone layout-zone--center">MAP + LOCATION</div>
+          <div class="layout-zone layout-zone--right">STATUS + FEEDBACK</div>
+        </div>
+
+        <div class="measure-table">
+          <div class="measure-row measure-row--head"><span>对象</span><span>位置</span><span>尺寸</span><span>证据</span></div>
+          <div class="measure-row"><strong>大屏主标题</strong><span>x796 / y46</span><span>339 × 37</span><span>蓝湖标注</span></div>
+          <div class="measure-row"><strong>车辆选择器</strong><span>x247 / y70</span><span>166 × 34</span><span>2 px / r2</span></div>
+          <div class="measure-row"><strong>模块标题装饰</strong><span>x43 / y150</span><span>391 × 59</span><span>PNG 切图</span></div>
+          <div class="measure-row"><strong>顶部整屏装饰</strong><span>x0 / y0</span><span>1920 × 223</span><span>1× / 2×</span></div>
+          <div class="measure-row"><strong>左右整屏装饰</strong><span>x0 / y0</span><span>692 × 1080</span><span>1× / 2×</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" id="components">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">04 / COMPONENTS</span>
+          <h2>组件不只是外观，<br>还要说明状态与交付方式</h2>
+          <p>以下组件来自实际切图。规范同时记录原始尺寸与后续工程化建议，避免继续用整块图片承载可编辑文字。</p>
+        </header>
+
+        <div class="component-grid">
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-primary.png" alt="蓝色主按钮边框切图"></div>
+            <h3>基础控制</h3>
+            <p>166 × 34 px；2 px 边框；2 px 圆角。适用于选择器和基础动作。</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-success.png" alt="绿色成功按钮切图"></div>
+            <h3>成功动作</h3>
+            <p>184 × 46 px；绿色只用于已确认、允许运行和成功状态。</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-danger.png" alt="红色危险按钮边框切图"></div>
+            <h3>危险动作</h3>
+            <p>停止或异常状态。必须同时出现明确文案和二次确认。</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen component-specimen--status">
+              <img src="assets/cloud-spec/status-green.png" alt="绿色状态灯">
+              <img src="assets/cloud-spec/status-yellow.png" alt="黄色状态灯">
+              <img src="assets/cloud-spec/status-red.png" alt="红色状态灯">
+            </div>
+            <h3>状态灯</h3>
+            <p>53 × 54 px；不能单独依赖颜色，应同时显示状态文字。</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen component-specimen--icons">
+              <img src="assets/cloud-spec/icon-data-switch.png" alt="数据切换图标">
+              <img src="assets/cloud-spec/icon-play.png" alt="播放图标">
+              <img src="assets/cloud-spec/icon-stop.png" alt="停止图标">
+              <img src="assets/cloud-spec/icon-close.png" alt="关闭图标">
+            </div>
+            <h3>功能图标</h3>
+            <p>切换 42 × 42；播放约 31 × 32；关闭 28 × 28。保留透明 PNG。</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-info.png" alt="蓝色信息按钮切图"></div>
+            <h3>信息状态</h3>
+            <p>用于当前模式和信息型选择，不与危险或成功状态混用。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--soft" id="modal">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">05 / FIVE-CAMERA MODAL</span>
+          <h2>五路视频按需展开，<br>主画面不被持续占满</h2>
+          <p>蓝湖原始弹窗使用三上两下布局。弹窗承担详细观察，主页面只保留单路预览和进入入口。</p>
+        </header>
+
+        <div class="modal-layout">
+          <div class="modal-sim" aria-label="五路视频弹窗结构示意">
+            <div class="modal-title">车辆视频</div>
+            <div class="video-grid">
+              <div class="video-box"><div class="video-label">左视角</div><div class="video-blank"></div></div>
+              <div class="video-box"><div class="video-label">车内视角</div><div class="video-blank"></div></div>
+              <div class="video-box"><div class="video-label">右视角</div><div class="video-blank"></div></div>
+              <div class="video-box"><div class="video-blank"></div><div class="video-label">前视角</div></div>
+              <div class="video-box"><div class="video-blank"></div><div class="video-label">后视角</div></div>
+            </div>
+          </div>
+          <article class="modal-copy">
+            <span class="spec-kicker">LANHU EXACT</span>
+            <h3>1243 × 785 px</h3>
+            <ul>
+              <li>位置：x339 / y148</li>
+              <li>背景：#00093A</li>
+              <li>边框：2 px / #7EB0FF</li>
+              <li>上排视频：380 × 239 px</li>
+              <li>下排视频：288 × 182 px</li>
+              <li>标题条：379 × 34 px</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" id="delivery">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">06 / ASSET DELIVERY</span>
+          <h2>区分装饰资产、<br>代码组件与状态数据</h2>
+          <p>原始项目提供了完整 1×/2× 切图。作品集复盘进一步把它们转成可维护的工程交付规则。</p>
+        </header>
+
+        <div class="delivery-grid">
+          <article class="delivery-card">
+            <span class="spec-kicker">KEEP AS ASSET</span>
+            <h3>适合继续使用 PNG</h3>
+            <ul class="delivery-list">
+              <li>复杂发光与透明装饰框</li>
+              <li>车辆、路侧设备与行人图形</li>
+              <li>状态灯与复杂光晕</li>
+              <li>无法稳定用 CSS 复现的纹理</li>
+              <li>同时输出 Web @1x / @2x</li>
+            </ul>
+          </article>
+          <article class="delivery-card">
+            <span class="spec-kicker">BUILD IN CODE</span>
+            <h3>应由代码实现</h3>
+            <ul class="delivery-list">
+              <li>正文、数值、状态与表格文字</li>
+              <li>纯色背景、普通边框和圆角</li>
+              <li>表格、列表、选择器和弹窗布局</li>
+              <li>禁用、加载、悬停和聚焦状态</li>
+              <li>对象选择与地图联动逻辑</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="evidence-note">证据边界：本页中的原始尺寸、字体、色值和版本日期来自用户当前打开的蓝湖项目；“8 px 网格、代码化文字、九宫格拉伸、无障碍状态”等属于作品集复盘后的交付规范，不冒充当时已经建立的正式设计系统。</p>
+      </div>
+    </section>
+    <section class="portfolio-contact" id="contact" aria-labelledby="portfolio-contact-title">
+      <div class="portfolio-contact__shell portfolio-contact__shell--reference">
+        <div class="portfolio-contact__copy">
+          <h2 id="portfolio-contact-title">联系我们</h2>
+          <p>如果你正在推进一个业务复杂、角色众多，或需要跨终端落地的产品，欢迎与我联系。我擅长将复杂需求转化为清晰、可用、能够真正交付的系统体验。</p>
+          <a class="portfolio-contact__action portfolio-contact__action--primary portfolio-contact__email" href="mailto:j1404156603@163.com">发送邮件</a>
+        </div>
+        <div class="portfolio-contact__secondary-actions">
+          <a class="portfolio-contact__action" href="tel:+8618000241882" aria-label="拨打电话 180 0024 1882">电话</a>
+          <a class="portfolio-contact__action" href="https://www.linkedin.com/in/yinggang-liu-8632b1356" target="_blank" rel="noopener noreferrer">Linkedin</a>
+          <button class="portfolio-contact__action" type="button" data-copy-wechat="XA9708" aria-label="复制微信号 XA9708">微信</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="spec-footer">
+    <div class="spec-container">
+      <span>酷黑云控大屏设计规范 · Portfolio Reconstruction</span>
+      <a href="assets/cloud-spec/DESIGN.md">查看 DESIGN.md →</a>
+    </div>
+  </footer>
+  <script src="assets/portfolio-unified.js?v=portfolio-2026-08-14-1254"></script>
+</body>
+</html>

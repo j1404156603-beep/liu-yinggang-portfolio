@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="刘迎港作品集：手机 App、HMI 与宣传画册等三维与视觉资产索引，点击展示图查看单个项目全部设计稿。">
+  <title>三维与视觉资产｜刘迎港作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;family=Noto+Sans+SC:wght@400;500;600&amp;family=Noto+Serif+SC:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/visualization-gallery.css?v=portfolio-2026-08-14-1254">
+  <link rel="stylesheet" href="assets/portfolio-unified.css?v=portfolio-2026-08-14-1254">
+  <style>
+    .page-intro { padding: 72px 0 44px; border-bottom: 1px solid var(--line); }
+    .page-intro .container { display: grid; grid-template-columns: minmax(0, 7fr) minmax(280px, 5fr); gap: 48px; align-items: end; }
+    .page-intro p { margin: 0; color: var(--body); line-height: 1.8; }
+    .project-row { border-bottom: 1px solid var(--line); }
+    .project-row-inner { min-height: 300px; padding: 56px 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(320px, 5fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+    .project-row-inner--image-first { grid-template-columns: minmax(320px, 5fr) minmax(0, 7fr); }
+    .project-copy { display: flex; flex-direction: column; gap: 14px; }
+    .project-copy h2 { margin: 0; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.22; }
+    .project-text { display: flex; flex-direction: column; gap: 18px; margin-top: 10px; }
+    .project-text p { margin: 8px 0 0; color: var(--body); line-height: 1.85; }
+    .cover-card { display: flex; flex-direction: column; gap: 12px; padding: 0; border: 0; background: transparent; text-align: left; cursor: zoom-in; font: inherit; color: inherit; }
+    .cover-media { display: block; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--paper-light); box-shadow: 0 18px 44px rgba(36, 55, 70, 0.06); transition: transform 180ms ease, box-shadow 180ms ease; }
+    .cover-media .image-frame { border: 0; border-radius: 0; box-shadow: none; }
+    .cover-card:hover .cover-media, .cover-card:focus-visible .cover-media { transform: translateY(-2px); box-shadow: 0 24px 54px rgba(36, 55, 70, 0.1); }
+    .cover-card:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 4px; border-radius: 16px; }
+    .cover-hint { color: var(--quiet); font-size: 13px; }
+    .project-modal { width: min(1240px, calc(100vw - 48px)); max-height: min(880px, calc(100vh - 48px)); padding: 0; border: 1px solid var(--line); border-radius: 18px; background: var(--paper-light); color: var(--ink); box-shadow: 0 32px 90px rgba(9, 23, 36, 0.24); }
+    .project-modal::backdrop { background: rgba(9, 23, 36, 0.42); backdrop-filter: blur(4px); }
+    .project-modal__bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 22px; border-bottom: 1px solid var(--line); background: rgba(252, 251, 247, 0.94); backdrop-filter: blur(10px); }
+    .project-modal__bar h3 { margin: 0; font-size: 24px; line-height: 1.3; }
+    .project-modal__close { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); font-size: 24px; line-height: 1; cursor: pointer; }
+    .project-modal__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding: 22px; overflow: auto; max-height: calc(min(880px, 100vh - 48px) - 73px); }
+    .gallery-card { margin: 0; }
+    .gallery-card .image-frame { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--mist); cursor: zoom-in; }
+    .gallery-card figcaption { margin-top: 10px; color: var(--quiet); font-size: 13px; }
+    @media (max-width: 860px) {
+      .page-intro .container, .project-row-inner, .project-row-inner--image-first { grid-template-columns: 1fr; }
+      .project-row-inner--image-first .cover-card { order: 2; }
+      .project-modal__grid { grid-template-columns: 1fr; }
+    }
+  
+    .cover-card--phone .cover-media {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .cover-card--phone .cover-media img {
+      width: auto;
+      max-width: 100%;
+      max-height: 520px;
+      display: block;
+      margin: 0 auto;
+    }
+    .project-modal__grid--phone {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .project-modal__grid--phone .gallery-card .image-frame {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    .project-modal__grid--phone .gallery-card img {
+      width: auto;
+      max-width: 100%;
+      max-height: 560px;
+      display: block;
+      margin: 0 auto;
+      background: #EEF2F6;
+    }
+    @media (max-width: 860px) {
+      .project-modal__grid--phone {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .cover-card--phone .cover-media {
+        max-width: 300px;
+      }
+    }
+</style>
+  <link rel="stylesheet" href="assets/contact-module.css?v=portfolio-2026-08-14-1254">
+  <script defer src="assets/contact-module.js?v=portfolio-2026-08-14-1254"></script>
+  <script defer src="assets/language-switcher.js?v=portfolio-2026-08-14-1254"></script>
+</head>
+<body class="portfolio-unified portfolio-gallery-page">
+  <header class="portfolio-global-header">
+    <nav class="portfolio-global-nav" aria-label="作品集主导航">
+      <a class="portfolio-global-brand" href="liu-yinggang-portfolio-home-warm-paper.html#hero" aria-label="返回刘迎港作品集首页">
+        <span></span><span></span><span></span><span></span>
+      </a>
+      <div class="portfolio-global-links" data-portfolio-nav-links>
+        <a href="liu-yinggang-portfolio-home-warm-paper.html#hero">主页</a>
+        <a href="liu-yinggang-portfolio-about.html">关于我</a>
+        <a href="liu-yinggang-portfolio-case-studies.html">精选案例</a>
+        <span class="is-disabled" aria-disabled="true">实验</span>
+      </div>
+      <button class="portfolio-global-toggle" type="button" data-portfolio-nav-toggle aria-expanded="false" aria-label="打开主导航">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <div>
+          <span class="label">3D and visual assets</span>
+          <h1 class="serif">三维与视觉资产</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-row" id="app-hospital-transfer">
+      <div class="container project-row-inner ">
+        <div class="project-copy">
+  <span class="label">01 / Mobile app</span>
+  <h2 class="serif">手机医院转运小程序</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>面向医院转运服务的移动端小程序，覆盖车型查看、预约提交、转运动态与个人资质管理等核心环节。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>围绕“选择服务—填写信息—提交预约—跟踪进度”组织流程，通过分步填写与状态反馈降低操作负担。</p>
+    </div>
+  </div>
+</div><button class="cover-card cover-card--phone" type="button" data-project="app-hospital-transfer" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开手机医院转运小程序全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-cover.png" data-lightbox-full="assets/visual-assets/app-hospital-transfer-cover.png" width="442" height="906" alt="医院转运：手机医院转运小程序展示图" loading="lazy"></span></span>
+</button>
+      </div>
+    </section>
+    <section class="project-row" id="app-hospital-screen">
+      <div class="container project-row-inner project-row-inner--image-first">
+        <button class="cover-card cover-card--phone" type="button" data-project="app-hospital-screen" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开手机大屏展示全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/app-hospital-screen-cover.png" data-lightbox-full="assets/visual-assets/app-hospital-screen-cover.png" width="442" height="906" alt="手机大屏：手机大屏展示展示图" loading="lazy"></span></span>
+</button><div class="project-copy">
+  <span class="label">02 / Mobile app</span>
+  <h2 class="serif">手机大屏展示</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>将住院、门急诊、收入与医院运营等关键指标整合到移动端，形成便于随时查看的医院数据看板。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>针对手机长屏阅读，将信息按“总体概况—业务专题—数据明细”分层，兼顾快速浏览与逐层查看。</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+    <section class="project-row" id="app-energy-bill">
+      <div class="container project-row-inner ">
+        <div class="project-copy">
+  <span class="label">03 / Mobile app</span>
+  <h2 class="serif">手机能效账单</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>能效账单、能耗分析与费用构成。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>用账单结构加分项趋势，让能耗费用先看得懂再看得细。</p>
+    </div>
+  </div>
+</div><button class="cover-card cover-card--phone" type="button" data-project="app-energy-bill" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开手机能效账单全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/app-energy-bill-01.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-01.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 1：手机能效账单设计稿" loading="lazy"></span></span>
+</button>
+      </div>
+    </section>
+    <section class="project-row" id="hmi-operating-system">
+      <div class="container project-row-inner project-row-inner--image-first">
+        <button class="cover-card" type="button" data-project="hmi-operating-system" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开HMI Operating System全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/hmi-operating-system-05.jpg" data-lightbox-full="assets/visual-assets/hmi-operating-system-05.png" width="1024" height="600" alt="Frame 161：HMI Operating System设计稿" loading="lazy"></span></span>
+</button><div class="project-copy">
+  <span class="label">04 / HMI</span>
+  <h2 class="serif">HMI Operating System</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>车载 HMI 操作系统界面。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>驾驶场景下状态优先：大目标、低阅读负担、关键动作一眼可达。</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+    <section class="project-row" id="hmi-remote-cockpit">
+      <div class="container project-row-inner ">
+        <div class="project-copy">
+  <span class="label">05 / HMI</span>
+  <h2 class="serif">遥控驾驶舱管控平台</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>远程驾驶舱的车辆状态、视频与管控。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>把监控、控制和异常接管收进同一个驾驶舱视野。</p>
+    </div>
+  </div>
+</div><button class="cover-card" type="button" data-project="hmi-remote-cockpit" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开遥控驾驶舱管控平台全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-01.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-01.png" width="1928" height="1088" alt="Slide 16_9 - 1：遥控驾驶舱管控平台设计稿" loading="lazy"></span></span>
+</button>
+      </div>
+    </section>
+    <section class="project-row" id="brochure-cn">
+      <div class="container project-row-inner project-row-inner--image-first">
+        <button class="cover-card" type="button" data-project="brochure-cn" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开雷科智途宣传画册（中文版）全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/brochure-cn-01.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-01.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第1页：雷科智途宣传画册（中文版）内页" loading="lazy"></span></span>
+</button><div class="project-copy">
+  <span class="label">06 / Brochure</span>
+  <h2 class="serif">雷科智途宣传画册（中文版）</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>企业/产品宣传画册中文版。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>用统一版式节奏组织技术能力、应用场景和案例证据。</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+    <section class="project-row" id="brochure-en">
+      <div class="container project-row-inner ">
+        <div class="project-copy">
+  <span class="label">07 / Brochure</span>
+  <h2 class="serif">雷科智途宣传画册（English）</h2>
+  <div class="project-text">
+    <div>
+      <span class="caption-kicker">项目介绍</span>
+      <p>企业/产品宣传画册英文版。</p>
+    </div>
+    <div>
+      <span class="caption-kicker">设计思路</span>
+      <p>保持同一视觉系统，按英文阅读习惯重排信息层级。</p>
+    </div>
+  </div>
+</div><button class="cover-card" type="button" data-project="brochure-en" aria-haspopup="dialog" aria-controls="project-modal" aria-label="打开雷科智途宣传画册（English）全部设计稿">
+  <span class="cover-media"><span class="image-frame"><img src="assets/visual-assets/brochure-en-01.jpg" data-lightbox-full="assets/visual-assets/brochure-en-01.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第1页：雷科智途宣传画册（English）内页" loading="lazy"></span></span>
+</button>
+      </div>
+    </section>
+
+    <section class="portfolio-contact" id="contact" aria-labelledby="portfolio-contact-title">
+      <div class="portfolio-contact__shell portfolio-contact__shell--reference">
+        <div class="portfolio-contact__copy">
+          <h2 id="portfolio-contact-title">联系我们</h2>
+          <p>如果你正在推进一个业务复杂、角色众多，或需要跨终端落地的产品，欢迎与我联系。我擅长将复杂需求转化为清晰、可用、能够真正交付的系统体验。</p>
+          <a class="portfolio-contact__action portfolio-contact__action--primary portfolio-contact__email" href="mailto:j1404156603@163.com">发送邮件</a>
+        </div>
+        <div class="portfolio-contact__secondary-actions">
+          <a class="portfolio-contact__action" href="tel:+8618000241882" aria-label="拨打电话 180 0024 1882">电话</a>
+          <a class="portfolio-contact__action" href="https://www.linkedin.com/in/yinggang-liu-8632b1356" target="_blank" rel="noopener noreferrer">Linkedin</a>
+          <button class="portfolio-contact__action" type="button" data-copy-wechat="XA9708" aria-label="复制微信号 XA9708">微信</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <span>© 2026 刘迎港 · Product Designer for Enterprise and Complex Systems</span>
+      <a class="text-link" href="liu-yinggang-portfolio-case-studies.html">返回精选案例 <span aria-hidden="true">→</span></a>
+    </div>
+  </footer>
+
+<template id="gallery-app-hospital-transfer" data-grid="phone">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-cover.png" data-lightbox-full="assets/visual-assets/app-hospital-transfer-cover.png" width="442" height="906" alt="医院转运：手机医院转运小程序展示图" loading="lazy"></div>
+      <figcaption>医院转运</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-01.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-01.png" width="375" height="812" alt="专业科室：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>专业科室</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-02.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-02.png" width="375" height="812" alt="我的-我的设置：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>我的-我的设置</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-03.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-03.png" width="375" height="812" alt="我的-资质认证 – 2：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>我的-资质认证 – 2</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-04.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-04.png" width="375" height="812" alt="我的-资质认证 – 3：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>我的-资质认证 – 3</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-05.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-05.png" width="375" height="812" alt="我的-资质认证：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>我的-资质认证</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-06.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-06.png" width="375" height="812" alt="我的：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>我的</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-07.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-07.png" width="375" height="812" alt="立即预约 – 1：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>立即预约 – 1</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-08.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-08.png" width="375" height="812" alt="立即预约 – 2：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>立即预约 – 2</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-09.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-09.png" width="375" height="812" alt="转运动态 – 下拉：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>转运动态 – 下拉</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-10.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-10.png" width="375" height="812" alt="转运动态 小程序：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>转运动态 小程序</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-11.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-11.png" width="375" height="812" alt="转运动态：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>转运动态</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-12.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-12.png" width="375" height="812" alt="转运车型 – 详情：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>转运车型 – 详情</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-13.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-13.png" width="375" height="812" alt="转运车型：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>转运车型</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-transfer-14.jpg" data-lightbox-full="assets/visual-assets/app-hospital-transfer-14.png" width="375" height="1217" alt="首页：手机医院转运小程序设计稿" loading="lazy"></div>
+      <figcaption>首页</figcaption>
+    </figure>
+</template>
+<template id="gallery-app-hospital-screen" data-grid="phone">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-screen-cover.png" data-lightbox-full="assets/visual-assets/app-hospital-screen-cover.png" width="442" height="906" alt="手机大屏：手机大屏展示展示图" loading="lazy"></div>
+      <figcaption>手机大屏</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-screen-01.jpg" data-lightbox-full="assets/visual-assets/app-hospital-screen-01.png" width="402" height="2268" alt="住院数据大屏：手机大屏展示设计稿" loading="lazy"></div>
+      <figcaption>住院数据大屏</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-screen-02.jpg" data-lightbox-full="assets/visual-assets/app-hospital-screen-02.png" width="402" height="2510" alt="医院收入监测数据大屏：手机大屏展示设计稿" loading="lazy"></div>
+      <figcaption>医院收入监测数据大屏</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-screen-03.jpg" data-lightbox-full="assets/visual-assets/app-hospital-screen-03.png" width="402" height="2780" alt="医院运营总体监测平台：手机大屏展示设计稿" loading="lazy"></div>
+      <figcaption>医院运营总体监测平台</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-hospital-screen-04.jpg" data-lightbox-full="assets/visual-assets/app-hospital-screen-04.png" width="402" height="2444" alt="门急诊数据大屏：手机大屏展示设计稿" loading="lazy"></div>
+      <figcaption>门急诊数据大屏</figcaption>
+    </figure>
+</template>
+<template id="gallery-app-energy-bill" data-grid="phone">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-01.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-01.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 1：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 1</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-02.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-02.png" width="351" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 4：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 4</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-03.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-03.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 5：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 5</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-04.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-04.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 6：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 6</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-05.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-05.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 7：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 7</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-06.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-06.png" width="351" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 8：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 8</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-07.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-07.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 9：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 9</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-08.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-08.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 10-1：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 10-1</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-09.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-09.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 10：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 10</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-10.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-10.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 11-1：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 11-1</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-11.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-11.png" width="352" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 11：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 11</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/app-energy-bill-12.jpg" data-lightbox-full="assets/visual-assets/app-energy-bill-12.png" width="351" height="736" alt="5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 12：手机能效账单设计稿" loading="lazy"></div>
+      <figcaption>5A7CB70B-F243-49DE-B021-BEE151D6BD90(20221108-105 12</figcaption>
+    </figure>
+</template>
+<template id="gallery-hmi-operating-system">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-operating-system-01.jpg" data-lightbox-full="assets/visual-assets/hmi-operating-system-01.png" width="1024" height="600" alt="Frame 29：HMI Operating System设计稿" loading="lazy"></div>
+      <figcaption>Frame 29</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-operating-system-02.jpg" data-lightbox-full="assets/visual-assets/hmi-operating-system-02.png" width="1024" height="600" alt="Frame 32：HMI Operating System设计稿" loading="lazy"></div>
+      <figcaption>Frame 32</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-operating-system-03.jpg" data-lightbox-full="assets/visual-assets/hmi-operating-system-03.png" width="1024" height="600" alt="Frame 90：HMI Operating System设计稿" loading="lazy"></div>
+      <figcaption>Frame 90</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-operating-system-04.jpg" data-lightbox-full="assets/visual-assets/hmi-operating-system-04.png" width="1024" height="600" alt="Frame 92：HMI Operating System设计稿" loading="lazy"></div>
+      <figcaption>Frame 92</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-operating-system-05.jpg" data-lightbox-full="assets/visual-assets/hmi-operating-system-05.png" width="1024" height="600" alt="Frame 161：HMI Operating System设计稿" loading="lazy"></div>
+      <figcaption>Frame 161</figcaption>
+    </figure>
+</template>
+<template id="gallery-hmi-remote-cockpit">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-01.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-01.png" width="1928" height="1088" alt="Slide 16_9 - 1：遥控驾驶舱管控平台设计稿" loading="lazy"></div>
+      <figcaption>Slide 16_9 - 1</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-02.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-02.png" width="1920" height="1080" alt="Slide 16_9 - 6：遥控驾驶舱管控平台设计稿" loading="lazy"></div>
+      <figcaption>Slide 16_9 - 6</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-03.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-03.png" width="1920" height="1080" alt="Slide 16_9 - 7：遥控驾驶舱管控平台设计稿" loading="lazy"></div>
+      <figcaption>Slide 16_9 - 7</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-04.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-04.png" width="1920" height="1080" alt="Slide 16_9 - 8：遥控驾驶舱管控平台设计稿" loading="lazy"></div>
+      <figcaption>Slide 16_9 - 8</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-05.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-05.png" width="1920" height="1080" alt="Slide 16_9 - 9：遥控驾驶舱管控平台设计稿" loading="lazy"></div>
+      <figcaption>Slide 16_9 - 9</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/hmi-remote-cockpit-06.jpg" data-lightbox-full="assets/visual-assets/hmi-remote-cockpit-06.png" width="1920" height="1080" alt="Slide 16_9 - 11：遥控驾驶舱管控平台设计稿" loading="lazy"></div>
+      <figcaption>Slide 16_9 - 11</figcaption>
+    </figure>
+</template>
+<template id="gallery-brochure-cn">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-01.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-01.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第1页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第1页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-02.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-02.avif" width="1933" height="1319" alt="雷科智途宣传画册（中文版） · 第2页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第2页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-03.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-03.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第3页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第3页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-04.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-04.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第4页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第4页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-05.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-05.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第5页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第5页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-06.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-06.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第6页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第6页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-07.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-07.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第7页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第7页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-08.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-08.png" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第8页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第8页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-cn-09.jpg" data-lightbox-full="assets/visual-assets/brochure-cn-09.avif" width="1933" height="1320" alt="雷科智途宣传画册（中文版） · 第9页：雷科智途宣传画册（中文版）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（中文版） · 第9页</figcaption>
+    </figure>
+</template>
+<template id="gallery-brochure-en">
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-01.jpg" data-lightbox-full="assets/visual-assets/brochure-en-01.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第1页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第1页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-02.jpg" data-lightbox-full="assets/visual-assets/brochure-en-02.avif" width="1933" height="1319" alt="雷科智途宣传画册（English） · 第2页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第2页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-03.jpg" data-lightbox-full="assets/visual-assets/brochure-en-03.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第3页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第3页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-04.jpg" data-lightbox-full="assets/visual-assets/brochure-en-04.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第4页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第4页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-05.jpg" data-lightbox-full="assets/visual-assets/brochure-en-05.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第5页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第5页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-06.jpg" data-lightbox-full="assets/visual-assets/brochure-en-06.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第6页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第6页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-07.jpg" data-lightbox-full="assets/visual-assets/brochure-en-07.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第7页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第7页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-08.jpg" data-lightbox-full="assets/visual-assets/brochure-en-08.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第8页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第8页</figcaption>
+    </figure>
+    <figure class="gallery-card">
+      <div class="image-frame"><img src="assets/visual-assets/brochure-en-09.jpg" data-lightbox-full="assets/visual-assets/brochure-en-09.avif" width="1933" height="1320" alt="雷科智途宣传画册（English） · 第9页：雷科智途宣传画册（English）内页" loading="lazy"></div>
+      <figcaption>雷科智途宣传画册（English） · 第9页</figcaption>
+    </figure>
+</template>
+
+<dialog class="project-modal" id="project-modal" aria-labelledby="project-modal-title">
+    <div class="project-modal__bar">
+      <h3 class="serif" id="project-modal-title">项目展示</h3>
+      <button class="project-modal__close" type="button" data-modal-close aria-label="关闭项目展示">×</button>
+    </div>
+    <div class="project-modal__grid" id="project-modal-grid"></div>
+  </dialog>
+
+<dialog class="lightbox" id="image-lightbox" aria-labelledby="lightbox-caption">
+    <div class="lightbox-toolbar">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+      <div class="lightbox-controls" aria-label="大图缩放控制">
+        <button type="button" data-lightbox-action="zoom-out" aria-label="缩小">−</button>
+        <output id="lightbox-zoom" aria-live="polite">100%</output>
+        <button type="button" data-lightbox-action="zoom-in" aria-label="放大">+</button>
+        <button class="lightbox-text-button" type="button" data-lightbox-action="actual">1:1</button>
+        <button class="lightbox-text-button" type="button" data-lightbox-action="fit">适合窗口</button>
+      </div>
+      <button class="lightbox-close" type="button" data-lightbox-action="close" aria-label="关闭大图">×</button>
+    </div>
+    <div class="lightbox-stage" id="lightbox-stage">
+      <img class="lightbox-image" id="lightbox-image" alt="">
+    </div>
+    <p class="lightbox-hint">双击图片可在适合窗口与原始尺寸之间切换</p>
+  </dialog>
+
+  <script>
+    (() => {
+      const modal = document.querySelector('#project-modal');
+      const title = document.querySelector('#project-modal-title');
+      const grid = document.querySelector('#project-modal-grid');
+      const names = {
+        'app-hospital-transfer': '手机医院转运小程序',
+        'app-hospital-screen': '手机大屏展示',
+        'app-energy-bill': '手机能效账单',
+        'hmi-operating-system': 'HMI Operating System',
+        'hmi-remote-cockpit': '遥控驾驶舱管控平台',
+        'brochure-cn': '雷科智途宣传画册（中文版）',
+        'brochure-en': '雷科智途宣传画册（English）'
+      };
+      if (modal && title && grid) {
+        document.querySelectorAll('.cover-card').forEach((button) => {
+          button.addEventListener('click', () => {
+            const id = button.dataset.project;
+            const template = document.querySelector(`#gallery-${id}`);
+            if (!id || !template) return;
+            title.textContent = names[id] || '项目展示';
+            grid.replaceChildren(template.content.cloneNode(true));
+            grid.classList.toggle('project-modal__grid--phone', template.dataset.grid === 'phone');
+            if (!modal.open) modal.showModal();
+          });
+        });
+        modal.querySelector('[data-modal-close]')?.addEventListener('click', () => modal.close());
+        modal.addEventListener('click', (event) => { if (event.target === modal) modal.close(); });
+        modal.addEventListener('close', () => grid.replaceChildren());
+      }
+
+      const dialog = document.querySelector('#image-lightbox');
+      const stage = document.querySelector('#lightbox-stage');
+      const preview = document.querySelector('#lightbox-image');
+      const caption = document.querySelector('#lightbox-caption');
+      const zoomOutput = document.querySelector('#lightbox-zoom');
+      if (!dialog || !stage || !preview || !caption || !zoomOutput) return;
+      let scale = 1;
+      let fitScale = 1;
+      const clampScale = (value) => Math.min(2.5, Math.max(0.1, value));
+      const centerPreview = () => {
+        stage.scrollLeft = Math.max(0, (stage.scrollWidth - stage.clientWidth) / 2);
+        stage.scrollTop = Math.max(0, (stage.scrollHeight - stage.clientHeight) / 2);
+      };
+      const applyScale = (nextScale, preserveCenter = true) => {
+        const oldWidth = stage.scrollWidth;
+        const oldHeight = stage.scrollHeight;
+        const centerX = stage.scrollLeft + stage.clientWidth / 2;
+        const centerY = stage.scrollTop + stage.clientHeight / 2;
+        const ratioX = oldWidth > 0 ? centerX / oldWidth : 0.5;
+        const ratioY = oldHeight > 0 ? centerY / oldHeight : 0.5;
+        scale = clampScale(nextScale);
+        preview.style.width = `${Math.round(preview.naturalWidth * scale)}px`;
+        zoomOutput.value = `${Math.round(scale * 100)}%`;
+        zoomOutput.textContent = zoomOutput.value;
+        preview.style.cursor = scale > fitScale + 0.01 ? 'zoom-out' : 'zoom-in';
+        requestAnimationFrame(() => {
+          if (!preserveCenter) { centerPreview(); return; }
+          stage.scrollLeft = Math.max(0, ratioX * stage.scrollWidth - stage.clientWidth / 2);
+          stage.scrollTop = Math.max(0, ratioY * stage.scrollHeight - stage.clientHeight / 2);
+        });
+      };
+      const calculateFitScale = () => {
+        const horizontalSpace = Math.max(120, stage.clientWidth - 68);
+        const verticalSpace = Math.max(120, stage.clientHeight - 68);
+        fitScale = Math.min(horizontalSpace / preview.naturalWidth, verticalSpace / preview.naturalHeight, 1);
+      };
+      const fitPreview = () => { calculateFitScale(); applyScale(fitScale, false); };
+      const showPreview = (source) => {
+        caption.textContent = source.alt;
+        preview.alt = source.alt;
+        preview.src = source.dataset.lightboxFull || source.currentSrc || source.src;
+        if (!dialog.open) dialog.showModal();
+        const prepareImage = () => {
+          fitPreview();
+          dialog.querySelector("[data-lightbox-action='close']")?.focus();
+        };
+        if (preview.complete && preview.naturalWidth > 0) prepareImage();
+        else preview.addEventListener('load', prepareImage, { once: true });
+      };
+      document.addEventListener('click', (event) => {
+        const image = event.target.closest('.gallery-card img');
+        if (image) showPreview(image);
+      });
+      dialog.addEventListener('click', (event) => { if (event.target === dialog || event.target === stage) dialog.close(); });
+      dialog.addEventListener('close', () => {
+        preview.removeAttribute('src');
+        preview.style.removeProperty('width');
+        caption.textContent = '';
+      });
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === '+' || event.key === '=') { event.preventDefault(); applyScale(scale + 0.2); }
+        if (event.key === '-') { event.preventDefault(); applyScale(scale - 0.2); }
+        if (event.key === '0') { event.preventDefault(); fitPreview(); }
+      });
+      dialog.querySelectorAll('[data-lightbox-action]').forEach((control) => {
+        control.addEventListener('click', () => {
+          const action = control.dataset.lightboxAction;
+          if (action === 'close') dialog.close();
+          if (action === 'zoom-in') applyScale(scale + 0.2);
+          if (action === 'zoom-out') applyScale(scale - 0.2);
+          if (action === 'actual') applyScale(1, false);
+          if (action === 'fit') fitPreview();
+        });
+      });
+      preview.addEventListener('dblclick', () => {
+        if (Math.abs(scale - fitScale) < 0.02) applyScale(1, false);
+        else fitPreview();
+      });
+      window.addEventListener('resize', () => {
+        if (!dialog.open) return;
+        const wasFitted = Math.abs(scale - fitScale) < 0.02;
+        calculateFitScale();
+        if (wasFitted) applyScale(fitScale, false);
+      });
+    })();
+  </script>
+  <script src="assets/portfolio-unified.js?v=portfolio-2026-08-14-1254"></script>
+</body>
+</html>
