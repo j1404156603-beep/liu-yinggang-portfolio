@@ -81,15 +81,15 @@
             disabled: false,
             href: isChineseInterface
               ? ({
-                  "liu-yinggang-portfolio-home-warm-paper.html": "/en/index.html",
-                  "liu-yinggang-portfolio-about.html": "/en/about.html",
-                  "liu-yinggang-portfolio-case-medical.html": "/en/case-provincial-healthcare.html",
-                  "liu-yinggang-portfolio-case-mining.html": "/en/case-autonomous-mining.html",
-                  "liu-yinggang-portfolio-case-cloud.html": "/en/case-vehicle-roadside-cloud-control.html",
-                  "liu-yinggang-portfolio-visualization-gallery.html": "/en/operational-dashboards.html",
-                  "liu-yinggang-portfolio-complex-systems.html": "/en/enterprise-systems.html",
-                  "liu-yinggang-portfolio-3d-visual-assets.html": "/en/3d-visual-assets.html",
-                }[location.pathname.split("/").pop()] || "/en/index.html")
+                  "liu-yinggang-portfolio-home-warm-paper.html": "en/index.html",
+                  "liu-yinggang-portfolio-about.html": "en/about.html",
+                  "liu-yinggang-portfolio-case-medical.html": "en/case-provincial-healthcare.html",
+                  "liu-yinggang-portfolio-case-mining.html": "en/case-autonomous-mining.html",
+                  "liu-yinggang-portfolio-case-cloud.html": "en/case-vehicle-roadside-cloud-control.html",
+                  "liu-yinggang-portfolio-visualization-gallery.html": "en/operational-dashboards.html",
+                  "liu-yinggang-portfolio-complex-systems.html": "en/enterprise-systems.html",
+                  "liu-yinggang-portfolio-3d-visual-assets.html": "en/3d-visual-assets.html",
+                }[location.pathname.split("/").pop()] || "en/index.html")
               : null,
           })
         );

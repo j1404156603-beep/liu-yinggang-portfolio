@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liu Yinggang portfolio case study: a real-time cloud control platform for coordinated vehicle and roadside operations, video monitoring, point-cloud visualization, and engineering delivery.">
+  <title>Vehicle and Roadside Cloud Control Platform | Liu Yinggang Portfolio</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/medical-case-en.css?v=portfolio-bilingual-2026-08-12-bgfix">
+  <link rel="stylesheet" href="assets/cloud-case-en.css?v=portfolio-bilingual-2026-08-12-1636">
+  <link rel="stylesheet" href="assets/medical-contact.css?v=portfolio-bilingual-2026-08-12-1842">
+</head>
+<body class="cloud-case-v2">
+  <header class="site-header">
+    <nav class="nav" aria-label="Portfolio navigation">
+      <a class="brand" href="index.html#top" aria-label="Back to portfolio home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#top">Home</a>
+        <a href="about.html">About Me</a>
+        <a class="is-active" href="selected-work.html" aria-current="page">Selected Work</a>
+        <span class="is-disabled" aria-disabled="true">Lab</span>
+        <a href="../liu-yinggang-portfolio-case-cloud.html" lang="zh-CN" hreflang="zh-CN">语言</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero" id="overview">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">REAL-TIME CLOUD CONTROL / VEHICLE AND ROADSIDE OPERATIONS</p>
+          <h1>Vehicle and Roadside Cloud Control Platform</h1>
+          <p class="lead">A unified cloud control interface connecting vehicles, roadside units, maps, video, controls, and operational events in real time.</p>
+        </div>
+
+        <figure class="feature-frame feature-frame--hero cloud-hero-frame">
+          <img src="assets/cloud-control/vehicle-dashboard.jpg" alt="Vehicle operations dashboard with controls, map, live status, video, and events" width="1920" height="1080" fetchpriority="high" data-zoom="false">
+        </figure>
+
+        <div class="intro-grid">
+          <h2>Background</h2>
+          <p>This real-time cloud control platform supports coordinated management of vehicles and roadside units. Operators need to view object location, operating status, video, control actions, and event feedback within one interface.</p>
+        </div>
+
+        <div class="intro-grid">
+          <h2>Challenge</h2>
+          <p>Vehicles and roadside units carry different information, but both require a clear current object and operating context. The interface had to combine dense data, maps, video, and controls without confusing objects or overwhelming the operator.</p>
+        </div>
+
+        <div class="intro-grid intro-grid--details">
+          <h2>Case Details</h2>
+          <dl class="project-details">
+            <div>
+              <dt><img src="assets/medical-case/icons/detail-role.svg" alt="" aria-hidden="true" data-zoom="false">My role:</dt>
+              <dd>Sole UI/UX Designer</dd>
+            </div>
+            <div>
+              <dt><img src="assets/medical-case/icons/detail-period.svg" alt="" aria-hidden="true" data-zoom="false">Duration:</dt>
+              <dd>July to August 2024</dd>
+            </div>
+            <div>
+              <dt><img src="assets/medical-case/icons/detail-responsibility.svg" alt="" aria-hidden="true" data-zoom="false">Responsibilities:</dt>
+              <dd>End-to-end design process</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="highlights">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Selected Work</h2>
+          <p>Vehicle dispatch, roadside operations, video, and point-cloud maps form the platform’s core real-time workspace.</p>
+        </header>
+        <figure class="feature-frame feature-frame--wide cloud-showcase">
+          <img src="assets/cloud-control/cloud-control-mockup.avif" alt="Selected interfaces from the vehicle and roadside cloud control platform" width="6000" height="4500" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Information Architecture</h2>
+          <p>Vehicle dispatch and roadside control carry different information, but both follow the current object through one shared operating sequence.</p>
+        </header>
+
+        <div class="object-grid">
+          <article class="object-card">
+            <span class="card-index">OBJECT 01</span>
+            <h3>Vehicle Dispatch</h3>
+            <p>Organizes real-time status, controls, tasks, camera views, location, and operating events around a selected vehicle.</p>
+            <div class="object-tags">
+              <span>Vehicle Details</span>
+              <span>Remote Control</span>
+              <span>Task Management</span>
+              <span>Five Camera Views</span>
+              <span>Operating Events</span>
+            </div>
+          </article>
+          <article class="object-card">
+            <span class="card-index">OBJECT 02</span>
+            <h3>Roadside Units</h3>
+            <p>Organizes unit status, signal configuration, live signal states, recognition results, roadside video, and events around the current intersection.</p>
+            <div class="object-tags">
+              <span>Unit Information</span>
+              <span>Signal Configuration</span>
+              <span>Live Signals</span>
+              <span>Recognition Results</span>
+              <span>Roadside Events</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="shared-sequence" aria-label="Shared operating sequence for both object types">
+          <article class="shared-step"><span class="card-index">01</span><strong>Select Object</strong></article>
+          <article class="shared-step"><span class="card-index">02</span><strong>Confirm Location</strong></article>
+          <article class="shared-step"><span class="card-index">03</span><strong>Review Status</strong></article>
+          <article class="shared-step shared-step--active"><span class="card-index">04</span><strong>Execute Control</strong></article>
+          <article class="shared-step"><span class="card-index">05</span><strong>Observe Feedback</strong></article>
+        </div>
+
+        <div class="signal-strip" aria-label="Real-time information characteristics">
+          <article class="signal"><strong>1 sec</strong><span>Vehicle and roadside status update cycle</span></article>
+          <article class="signal"><strong>5 views</strong><span>Cabin, front, rear, left, and right cameras</span></article>
+          <article class="signal"><strong>4 views</strong><span>East, west, south, and north roadside cameras</span></article>
+          <article class="signal"><strong>30 sec</strong><span>Operating and roadside event request cycle</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="prototype">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Prototype and Information Framework</h2>
+          <p>The prototype first defined the roles of the central map and side panels, allowing both dashboards to share one reading order while supporting different control tasks.</p>
+        </header>
+
+        <div class="wireframe-stage">
+          <figure class="wireframe-figure">
+            <img src="assets/cloud-control/wireframe.png" alt="Vehicle operations wireframe with a central map and information and control panels on both sides" width="1373" height="819" loading="lazy">
+            <figcaption class="figure-label"><strong>Prototype</strong></figcaption>
+          </figure>
+          <div class="wireframe-notes">
+            <article class="wireframe-note">
+              <strong>Left: Object and Actions</strong>
+              <p>Vehicle or roadside-unit information, controls, and task entry points.</p>
+            </article>
+            <article class="wireframe-note">
+              <strong>Center: Location and Relationships</strong>
+              <p>The map preserves the spatial context between the current object, nearby objects, and signals.</p>
+            </article>
+            <article class="wireframe-note">
+              <strong>Right: Status and Feedback</strong>
+              <p>Live status, video, and events make the result of each action observable.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="screens">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Dual-Object Coordination</h2>
+          <p>The vehicle dashboard prioritizes status, tasks, and remote control; the roadside dashboard adapts the same structure to signals, recognition results, and device feedback.</p>
+        </header>
+
+        <div class="dashboard-layout">
+          <figure class="dashboard-figure">
+            <img src="assets/cloud-control/roadside-dashboard.jpg" alt="Roadside operations dashboard with unit information, signal control, map, recognition, video, and events" width="1920" height="1080" loading="lazy">
+            <figcaption class="figure-label"><strong>Roadside Operations Dashboard</strong></figcaption>
+          </figure>
+          <article class="dashboard-copy">
+            <span class="kicker">OBJECT SWITCH</span>
+            <h3>One layout,<br>two control contexts</h3>
+            <p>Switching from a vehicle to a roadside unit does not require relearning the interface. The map still holds spatial context, the left side handles the object and controls, and the right side carries live feedback.</p>
+            <div class="dashboard-list">
+              <span>Vehicle: tasks, lights, doors, and five camera views</span>
+              <span>Roadside: signal timing, recognition, and four camera views</span>
+              <span>Shared: object selection, map location, status, and events</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="optimization">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Experience Optimization</h2>
+          <p>The overall business framework came from the project requirements. I proposed and implemented the following interaction and layout improvements during design.</p>
+        </header>
+
+        <div class="optimization-grid">
+          <article class="linkage-card">
+            <div>
+              <span class="kicker">01 / OBJECT LINKAGE</span>
+              <h3>Link vehicle selection to map highlighting</h3>
+              <p>When multiple vehicles appear together, operators should not repeatedly match names, locations, details, and video. One selection establishes a persistent current object.</p>
+            </div>
+            <div class="linkage-flow" aria-label="Vehicle and map linkage flow">
+              <div><span>01</span>Select a vehicle or its map marker</div>
+              <div><span>02</span>Locate and highlight the current object</div>
+              <div><span>03</span>Update details, status, and video together</div>
+              <div><span>04</span>Keep subsequent controls in the same context</div>
+            </div>
+          </article>
+
+          <article class="modal-story">
+            <div class="modal-copy">
+              <span class="kicker">02 / VIDEO DENSITY</span>
+              <h3>Expand five camera feeds on demand</h3>
+              <p>The main interface retains one preview and view switching. A dedicated modal opens all five feeds when needed, then returns the operator to the current vehicle context.</p>
+            </div>
+            <figure class="modal-figure">
+              <img src="assets/cloud-control/five-camera-modal.png" alt="Five-camera modal with left, cabin, right, front, and rear vehicle views" width="2095" height="1218" loading="lazy">
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="point-cloud">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Point-Cloud Visual Delivery</h2>
+          <p>Using the site scan supplied by the project team, I refined color, brightness, and depth, applied the direction to the high-fidelity UI, and handed implementation parameters to engineering.</p>
+        </header>
+
+        <figure class="point-cloud-figure">
+          <img src="assets/cloud-control/point-cloud-map.png" alt="Operational point-cloud map with roads, vehicles, and routes" width="753" height="478" loading="lazy">
+        </figure>
+        <div class="point-chain" aria-label="Point-cloud visual delivery chain">
+          <article class="point-step"><span class="card-index">01</span><strong>Raw Scan</strong><p>Receive the site point-cloud data.</p></article>
+          <article class="point-step"><span class="card-index">02</span><strong>Visual Treatment</strong><p>Refine color, brightness, and spatial depth.</p></article>
+          <article class="point-step"><span class="card-index">03</span><strong>High-Fidelity UI</strong><p>Validate contrast with interface information.</p></article>
+          <article class="point-step"><span class="card-index">04</span><strong>Parameter Handoff</strong><p>Provide executable visual parameters to engineering.</p></article>
+          <article class="point-step"><span class="card-index">05</span><strong>Implementation QA</strong><p>Review rotation, zoom, and detailed rendering.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="delivery">
+      <div class="container">
+        <header class="chapter-head chapter-head--center">
+          <h2>Delivery and Outcome</h2>
+          <p>Within a compact team, I delivered prototypes, two dashboards, high-fidelity UI, production assets, 3D assets, point-cloud visual direction, and implementation review.</p>
+        </header>
+
+        <div class="delivery-summary">
+          <article class="scope-panel">
+            <span class="kicker">MY SCOPE</span>
+            <h3>Sole designer on the project</h3>
+            <p>In a five-person cross-functional team, I translated product requirements into the complete design chain from prototypes and two cloud-control dashboards to high-fidelity UI and engineering delivery. I also continued to propose functional and layout improvements during design.</p>
+            <div class="scope-grid">
+              <span>Dashboard Prototypes</span>
+              <span>Vehicle Operations Dashboard</span>
+              <span>Roadside Operations Dashboard</span>
+              <span>All High-Fidelity UI</span>
+              <span>Blender 3D Assets</span>
+              <span>Point-Cloud Parameters</span>
+              <span>Production Assets</span>
+              <span>Implementation QA</span>
+            </div>
+            <a class="cloud-spec-link" href="cloud-control-design-system.html">View the Cloud Control Design System →</a>
+          </article>
+          <article class="takeaway-panel">
+            <span class="kicker">DELIVERY TAKEAWAY</span>
+            <h3>The core structure and visual direction carried through implementation</h3>
+            <p>After design handoff, I continued reviewing interface fidelity and point-cloud rendering, working with frontend engineers to refine implementation details.</p>
+            <blockquote class="takeaway-quote">The goal was not to display more data, but to make vehicles, devices, status, space, and controls work as one clear operational system.</blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-contact" id="contact" aria-labelledby="portfolio-contact-title">
+      <div class="portfolio-contact__shell portfolio-contact__shell--reference">
+        <div class="portfolio-contact__copy">
+          <h2 id="portfolio-contact-title">Get in touch</h2>
+          <p>Feel free to reach out if you want to have a chat, or have any questions</p>
+          <a class="portfolio-contact__action portfolio-contact__action--primary portfolio-contact__email" href="mailto:j1404156603@163.com">Email Me</a>
+        </div>
+        <div class="portfolio-contact__secondary-actions">
+          <a class="portfolio-contact__action" href="tel:+8618000241882" aria-label="Call +86 180 0024 1882">Phone</a>
+          <a class="portfolio-contact__action" href="https://www.linkedin.com/in/yinggang-liu-8632b1356" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <button class="portfolio-contact__action" type="button" data-copy-wechat="XA9708" aria-label="Copy WeChat ID XA9708">WeChat</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <div class="container">
+      <span>Vehicle and Roadside Cloud Control Platform / Case Study</span>
+      <a href="selected-work.html">BACK / Selected Work →</a>
+    </div>
+  </footer>
+
+  <dialog class="image-lightbox" id="image-lightbox" aria-label="View full-size image">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close full-size image">×</button>
+    <figure>
+      <div class="lightbox-stage">
+        <img id="lightbox-image" alt="">
+      </div>
+      <figcaption><span id="lightbox-caption"></span><small>Original size / scroll to inspect</small></figcaption>
+    </figure>
+  </dialog>
+
+  <script>
+    const toggle = document.getElementById("mobile-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+
+    navLinks.addEventListener("click", () => {
+      navLinks.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+
+    const lightbox = document.getElementById("image-lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxClose = document.getElementById("lightbox-close");
+    let lightboxTrigger = null;
+
+    function openLightbox(image) {
+      lightboxTrigger = image;
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = image.alt || "Case study image";
+      lightbox.showModal();
+      document.body.classList.add("lightbox-open");
+      lightboxClose.focus();
+    }
+
+    document.querySelectorAll('main img:not([data-zoom="false"])').forEach(image => {
+      image.classList.add("is-zoomable");
+      image.tabIndex = 0;
+      image.setAttribute("role", "button");
+      image.setAttribute("aria-label", `View full size: ${image.alt || "Case study image"}`);
+      image.closest("figure, section")?.classList.add("has-zoom");
+      image.addEventListener("click", () => openLightbox(image));
+      image.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox(image);
+        }
+      });
+    });
+
+    lightboxClose.addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener("close", () => {
+      document.body.classList.remove("lightbox-open");
+      lightboxImage.removeAttribute("src");
+      lightboxTrigger?.focus();
+    });
+
+    document.addEventListener("click", async event => {
+      const button = event.target.closest("[data-copy-wechat]");
+      if (!button) return;
+      const wechatId = button.dataset.copyWechat;
+      const originalLabel = button.textContent;
+      try {
+        await navigator.clipboard.writeText(wechatId);
+        button.textContent = "Copied";
+      } catch {
+        button.textContent = `WeChat ${wechatId}`;
+      }
+      window.setTimeout(() => {
+        button.textContent = originalLabel;
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
