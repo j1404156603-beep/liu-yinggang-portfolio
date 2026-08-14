@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Liu Yinggang portfolio: the design system for a vehicle and roadside cloud control platform, covering color, typography, layout, components, video modals, and engineering asset delivery.">
+  <title>Cloud Control Design System | Liu Yinggang Portfolio</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/medical-case-en.css?v=portfolio-bilingual-2026-08-14-1457">
+  <link rel="stylesheet" href="assets/cloud-spec-en.css?v=20260812-en">
+  <link rel="stylesheet" href="assets/medical-contact.css?v=portfolio-bilingual-2026-08-12-1842">
+</head>
+<body class="cloud-spec-page">
+  <header class="site-header">
+    <nav class="nav" aria-label="Portfolio navigation">
+      <a class="brand" href="index.html#top" aria-label="Back to portfolio home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="index.html#top">Home</a>
+        <a href="about.html">About Me</a>
+        <a class="is-active" href="selected-work.html" aria-current="page">Selected Work</a>
+        <span class="is-disabled" aria-disabled="true">Lab</span>
+        <a href="../liu-yinggang-portfolio-cloud-design-system.html" lang="zh-CN" hreflang="zh-CN">语言</a>
+      </div>
+      <button class="mobile-toggle" id="mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">☰</button>
+    </nav>
+  </header>
+  <header class="spec-header">
+    <nav class="spec-nav" aria-label="Design system navigation">
+      <div class="spec-links">
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#layout">Layout</a>
+        <a href="#components">Components</a>
+        <a href="#modal">Modal</a>
+        <a href="#delivery">Delivery</a>
+      </div>
+      <a class="spec-back" href="case-vehicle-roadside-cloud-control.html">← Back to Case</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="spec-section spec-hero" id="overview">
+      <div class="spec-container">
+        <div class="spec-hero-grid">
+          <div>
+            <span class="spec-kicker">CLOUD CONTROL · 1920 × 1080</span>
+            <h1>Cloud Control<br>Design System</h1>
+            <p class="spec-lead">A delivery-ready visual language for vehicle dispatch, roadside devices, maps, video, status, and control actions. The specifications are grounded in actual Lanhu annotations and 1×/2× exported assets; retrospective recommendations are identified separately.</p>
+          </div>
+          <aside class="spec-proof">
+            <span>DESIGN PRIORITIES</span>
+            <strong>Consistent structure, legible states,<br>replaceable assets, and verifiable implementation.</strong>
+          </aside>
+        </div>
+
+        <div class="spec-facts">
+          <article class="spec-fact"><strong>1920 × 1080</strong><span>Web reference canvas</span></article>
+          <article class="spec-fact"><strong>132</strong><span>1× / 2× exported assets</span></article>
+          <article class="spec-fact"><strong>3 sets</strong><span>Vehicle · roadside · video modal</span></article>
+          <article class="spec-fact"><strong>3 typefaces</strong><span>Information · actions · display</span></article>
+        </div>
+
+        <figure class="dashboard-proof">
+          <img src="assets/cloud-spec/vehicle-dashboard.jpg" alt="Final vehicle dispatch dashboard">
+        </figure>
+        <p class="spec-caption">Delivered vehicle dispatch dashboard. The specification separates complex decorative assets from editable information layers.</p>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--night" id="color">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">01 / COLOR TOKENS</span>
+          <h2>Darkness is not the goal.<br>State recognition is.</h2>
+          <p>Blue-black surfaces reduce environmental distraction, bright blue defines interactive boundaries, and green, yellow, and red are reserved for operational states. The following values come from exact Lanhu annotations and exported pixels.</p>
+        </header>
+
+        <div class="token-grid">
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#081020"></div>
+            <div class="token-info"><strong>Canvas</strong><code>#081020</code><span>Dark dashboard base</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#00093A"></div>
+            <div class="token-info"><strong>Modal Surface</strong><code>#00093A</code><span>Five-camera modal</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#4794FF"></div>
+            <div class="token-info"><strong>Primary Line</strong><code>#4794FF</code><span>Selection, borders, title bars</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#7EB0FF"></div>
+            <div class="token-info"><strong>Modal Line</strong><code>#7EB0FF</code><span>2 px modal inner border</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#A8CBFF"></div>
+            <div class="token-info"><strong>Label</strong><code>#A8CBFF</code><span>14 px field labels</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#04A3FF"></div>
+            <div class="token-info"><strong>Info</strong><code>#04A3FF</code><span>Critical real-time values</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#36FF7D"></div>
+            <div class="token-info"><strong>Success</strong><code>#36FF7D</code><span>Connected and operating</span></div>
+          </article>
+          <article class="token-card">
+            <div class="token-swatch" style="--swatch:#FF5656"></div>
+            <div class="token-info"><strong>Danger</strong><code>#FF5656</code><span>Stop, exception, danger</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--soft" id="type">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">02 / TYPOGRAPHY</span>
+          <h2>Information and actions<br>use different voices.</h2>
+          <p>Information text remains stable and clear, while critical actions and dashboard titles use stronger display type. Decorative module frames can remain raster assets, but content text should be implemented as editable HTML.</p>
+        </header>
+
+        <div class="type-table">
+          <div class="type-row type-row--head"><span>Sample</span><span>Typeface</span><span>Size</span><span>Use</span></div>
+          <div class="type-row">
+            <span class="type-sample--title">Vehicle Dispatch Dashboard</span>
+            <span>HYk2gj</span><span>38 px</span><span>Dashboard title with white-to-blue highlight</span>
+          </div>
+          <div class="type-row">
+            <span class="type-sample--action">REMOTE START</span>
+            <span>YouSheBiaoTiHei</span><span>20 / 32 px</span><span>Control buttons and short actions</span>
+          </div>
+          <div class="type-row">
+            <span class="type-sample--value">125.56 km</span>
+            <span>SourceHanSansCN-Regular</span><span>16 px</span><span>Critical values, states, and object data</span>
+          </div>
+          <div class="type-row">
+            <span class="type-sample--label">Vehicle Name:</span>
+            <span>SourceHanSansCN-Regular</span><span>14 px</span><span>Field labels and table headers</span>
+          </div>
+        </div>
+        <p class="evidence-note">Original Lanhu annotation: the “Vehicle Name” label uses SourceHanSansCN-Regular at 14 px / #A8CBFF; object value “KH” uses 16 px / #FFFFFF; the “Event Code” table header uses 14 px / #CDDFFF.</p>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--night" id="layout">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">03 / CANVAS &amp; LAYOUT</span>
+          <h2>Stable side regions,<br>spatial context at the center.</h2>
+          <p>Vehicle dispatch and roadside-device screens share one structure: objects and controls on the left, maps and positioning at the center, and status, video, and event feedback on the right.</p>
+        </header>
+
+        <div class="layout-stage">
+          <img src="assets/cloud-spec/roadside-dashboard.jpg" alt="Roadside-device dashboard layout example">
+          <div class="layout-zone layout-zone--left">OBJECT + CONTROL</div>
+          <div class="layout-zone layout-zone--center">MAP + LOCATION</div>
+          <div class="layout-zone layout-zone--right">STATUS + FEEDBACK</div>
+        </div>
+
+        <div class="measure-table">
+          <div class="measure-row measure-row--head"><span>Object</span><span>Position</span><span>Size</span><span>Evidence</span></div>
+          <div class="measure-row"><strong>Dashboard title</strong><span>x796 / y46</span><span>339 × 37</span><span>Lanhu annotation</span></div>
+          <div class="measure-row"><strong>Vehicle selector</strong><span>x247 / y70</span><span>166 × 34</span><span>2 px / r2</span></div>
+          <div class="measure-row"><strong>Module-title frame</strong><span>x43 / y150</span><span>391 × 59</span><span>PNG asset</span></div>
+          <div class="measure-row"><strong>Full-width header frame</strong><span>x0 / y0</span><span>1920 × 223</span><span>1× / 2×</span></div>
+          <div class="measure-row"><strong>Side frames</strong><span>x0 / y0</span><span>692 × 1080</span><span>1× / 2×</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" id="components">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">04 / COMPONENTS</span>
+          <h2>Components define more than appearance.<br>They define states and delivery.</h2>
+          <p>These components come from actual exported assets. The specification records both original dimensions and engineering recommendations, so editable text is not embedded in large raster images.</p>
+        </header>
+
+        <div class="component-grid">
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-primary.png" alt="Blue primary-control border asset"></div>
+            <h3>Base Control</h3>
+            <p>166 × 34 px; 2 px border; 2 px radius. Used for selectors and basic actions.</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-success.png" alt="Green success-action asset"></div>
+            <h3>Success Action</h3>
+            <p>184 × 46 px. Green is reserved for confirmed, permitted, and successful states.</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-danger.png" alt="Red danger-action border asset"></div>
+            <h3>Danger Action</h3>
+            <p>Used for stop and exception states, with explicit copy and secondary confirmation.</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen component-specimen--status">
+              <img src="assets/cloud-spec/status-green.png" alt="Green status indicator">
+              <img src="assets/cloud-spec/status-yellow.png" alt="Yellow status indicator">
+              <img src="assets/cloud-spec/status-red.png" alt="Red status indicator">
+            </div>
+            <h3>Status Indicators</h3>
+            <p>53 × 54 px. State labels accompany color so meaning is never color-only.</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen component-specimen--icons">
+              <img src="assets/cloud-spec/icon-data-switch.png" alt="Data-switch icon">
+              <img src="assets/cloud-spec/icon-play.png" alt="Play icon">
+              <img src="assets/cloud-spec/icon-stop.png" alt="Stop icon">
+              <img src="assets/cloud-spec/icon-close.png" alt="Close icon">
+            </div>
+            <h3>Functional Icons</h3>
+            <p>Switch: 42 × 42; play: about 31 × 32; close: 28 × 28. Delivered as transparent PNG assets.</p>
+          </article>
+          <article class="component-card">
+            <div class="component-specimen"><img src="assets/cloud-spec/button-info.png" alt="Blue information-state asset"></div>
+            <h3>Information State</h3>
+            <p>Used for current modes and informational selections, separate from danger and success states.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section spec-section--soft" id="modal">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">05 / FIVE-CAMERA MODAL</span>
+          <h2>Five camera feeds on demand,<br>without occupying the main view.</h2>
+          <p>The original Lanhu modal uses three feeds above and two below. Detailed observation moves into the modal, while the main dashboard retains one preview and an entry point.</p>
+        </header>
+
+        <div class="modal-layout">
+          <div class="modal-sim" aria-label="Five-camera modal structure">
+            <div class="modal-title">Vehicle Cameras</div>
+            <div class="video-grid">
+              <div class="video-box"><div class="video-label">Left View</div><div class="video-blank"></div></div>
+              <div class="video-box"><div class="video-label">Cabin View</div><div class="video-blank"></div></div>
+              <div class="video-box"><div class="video-label">Right View</div><div class="video-blank"></div></div>
+              <div class="video-box"><div class="video-blank"></div><div class="video-label">Front View</div></div>
+              <div class="video-box"><div class="video-blank"></div><div class="video-label">Rear View</div></div>
+            </div>
+          </div>
+          <article class="modal-copy">
+            <span class="spec-kicker">LANHU EXACT</span>
+            <h3>1243 × 785 px</h3>
+            <ul>
+              <li>Position: x339 / y148</li>
+              <li>Background: #00093A</li>
+              <li>Border: 2 px / #7EB0FF</li>
+              <li>Top feeds: 380 × 239 px</li>
+              <li>Bottom feeds: 288 × 182 px</li>
+              <li>Title bar: 379 × 34 px</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="spec-section" id="delivery">
+      <div class="spec-container">
+        <header class="spec-heading">
+          <span class="spec-kicker">06 / ASSET DELIVERY</span>
+          <h2>Separate decorative assets,<br>code components, and state data.</h2>
+          <p>The original project included complete 1×/2× exports. This retrospective organizes them into maintainable engineering-delivery rules.</p>
+        </header>
+
+        <div class="delivery-grid">
+          <article class="delivery-card">
+            <span class="spec-kicker">KEEP AS ASSET</span>
+            <h3>Keep as PNG Assets</h3>
+            <ul class="delivery-list">
+              <li>Complex glow and transparent decorative frames</li>
+              <li>Vehicle, roadside-device, and pedestrian graphics</li>
+              <li>Status indicators and complex light effects</li>
+              <li>Textures that cannot be reproduced reliably in CSS</li>
+              <li>Export Web @1x and @2x versions</li>
+            </ul>
+          </article>
+          <article class="delivery-card">
+            <span class="spec-kicker">BUILD IN CODE</span>
+            <h3>Build in Code</h3>
+            <ul class="delivery-list">
+              <li>Body copy, values, states, and table text</li>
+              <li>Solid backgrounds, standard borders, and radii</li>
+              <li>Tables, lists, selectors, and modal layouts</li>
+              <li>Disabled, loading, hover, and focus states</li>
+              <li>Object selection and map-linked behavior</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="evidence-note">Evidence boundary: original dimensions, typefaces, color values, and version dates on this page come from the available Lanhu project. Recommendations such as an 8 px grid, code-rendered text, nine-slice scaling, and accessible state treatment were added during the portfolio retrospective and are not presented as a formal system that existed at the time.</p>
+      </div>
+    </section>
+    <section class="portfolio-contact" id="contact" aria-labelledby="portfolio-contact-title">
+      <div class="portfolio-contact__shell portfolio-contact__shell--reference">
+        <div class="portfolio-contact__copy">
+          <h2 id="portfolio-contact-title">Get in touch</h2>
+          <p>Feel free to reach out if you want to have a chat, or have any questions</p>
+          <a class="portfolio-contact__action portfolio-contact__action--primary portfolio-contact__email" href="mailto:j1404156603@163.com">Email Me</a>
+        </div>
+        <div class="portfolio-contact__secondary-actions">
+          <a class="portfolio-contact__action" href="tel:+8618000241882" aria-label="Call +86 180 0024 1882">Phone</a>
+          <a class="portfolio-contact__action" href="https://www.linkedin.com/in/yinggang-liu-8632b1356" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <button class="portfolio-contact__action" type="button" data-copy-wechat="XA9708" aria-label="Copy WeChat ID XA9708">WeChat</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.getElementById("mobile-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+
+    navLinks.addEventListener("click", () => {
+      navLinks.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+
+    document.querySelector("[data-copy-wechat]")?.addEventListener("click", async event => {
+      const button = event.currentTarget;
+      const value = button.dataset.copyWechat;
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "Copied";
+      } catch {
+        button.textContent = value;
+      }
+      window.setTimeout(() => { button.textContent = "WeChat"; }, 1600);
+    });
+  </script>
+</body>
+</html>
